@@ -8,8 +8,9 @@ import MainLayout from '../../MainLayout/MainLayout';
 import Home from '../../Pages/Home';
 import About from '../../Pages/About/About';
 import Favourite from '../../Pages/Favorite/Favourite';
-import Details from '../../Pages/Details/Details';
 import Error from '../../Pages/Error/Error';
+import AllPhones from '../AllPhones/AllPhones';
+import Detail from '../../Pages/Detail/Detail';
 
 
 
@@ -21,6 +22,8 @@ export const router = createBrowserRouter([
    children:[
    {
     path: "/",
+    // HydrateFallback: <p>Please Wait, Gadgets are Loading....</p>,
+    loader: ()=> fetch('Data.json'),
     Component: Home
   
    },
@@ -34,7 +37,12 @@ export const router = createBrowserRouter([
   },
   {
     path:"/details",
-    Component:Details
+    Component:AllPhones
+  }
+  ,
+  {
+    path:'/phone',
+    Component: Detail
   }
 
 ]
