@@ -14,15 +14,14 @@ const Home = () => {
       
         const SearchText = data.filter(phone => 
             
-            phone?.name?.toLowerCase().spilt(" ").includes(text.toLowerCase()) ||
+            phone?.name?.toLowerCase().split(" ").includes(text.toLowerCase()) ||
 
-           phone?.brand?.toLowerCase().spilt(" ").includes(text.toLowerCase())
+           phone?.brand?.toLowerCase().split(" ").includes(text.toLowerCase())
+        
     
     ) 
     console.log(SearchText)
-        
-        
-       
+    setPhones(SearchText)
 
     }
 
@@ -30,7 +29,7 @@ const Home = () => {
     return (
         <div>
         <Banner HandleSearch ={HandleSearch}></Banner>
-        <AllPhones data = {Phones}></AllPhones>
+        <AllPhones Phones = {Phones}></AllPhones>
         </div>
     );
 };

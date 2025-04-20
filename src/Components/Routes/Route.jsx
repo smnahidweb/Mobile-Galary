@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
    {
     path: "/",
     // HydrateFallback: <p>Please Wait, Gadgets are Loading....</p>,
-    loader: ()=> fetch('Data.json'),
+    loader: ()=> fetch('../Data.json'),
     Component: Home
   
    },
@@ -41,7 +41,9 @@ export const router = createBrowserRouter([
   }
   ,
   {
-    path:'/phone',
+    path:'/phone/:id',
+    loader: ()=> fetch('../Data.json'),
+    
     Component: Detail
   }
 

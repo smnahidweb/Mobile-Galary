@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
-const PhonesContainer = ({info}) => {
+import { Removefavourites } from '../../Utilities/Index';
+
+const FavoritesList = ({info,HandleDelate}) => {
     console.log(info)
-    
     return (
-        <div >
-           <div className="card bg-base-100  shadow-sm">
+        
+  <div className="card bg-base-100  shadow-sm">
   <figure className="px-10 pt-10">
     <img
       src={info.image}
@@ -16,17 +16,12 @@ const PhonesContainer = ({info}) => {
     <h2 className="card-title">{info.name}</h2>
     <p>{info.description}</p>
     <div className="card-actions">
-      <Link to={`/phone/${info.id}`}><button className="btn btn-primary">View More</button></Link>
+     
     </div>
+    <button onClick= { ()=>HandleDelate(info.id)} className='absolute -top-3 -right-3 btn btn-primary'>X</button>
   </div>
- 
-
-</div>
-
-
         </div>
-        
     );
 };
 
-export default PhonesContainer;
+export default FavoritesList;

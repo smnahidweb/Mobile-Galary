@@ -2,22 +2,23 @@ import React from 'react';
 import { useEffect,useState } from 'react';
 import PhonesContainer from '../../Pages/PhonesContainer/PhonesContainer';
 import { VscPreview } from 'react-icons/vsc';
+import { TbPhoneSpark } from 'react-icons/tb';
 
-const AllPhones = ({data}) => {
+const AllPhones = ({Phones}) => {
      const [display,setDisplay] = useState([]);
      const [AllDisplay,SetAllDisplay] = useState(false);
        
         useEffect( () => {
 
             if(AllDisplay){
-                setDisplay(data)
+                setDisplay(Phones)
             }
             else{
-                setDisplay(data.slice(0,6))
+                setDisplay(Phones.slice(0,6))
             }
          
 
-        },[AllDisplay,data])
+        },[AllDisplay,Phones])
     return (
         <div className='py-12'>
         <div className='grid grid-cols-1 md:grid-cols-3 mb-4'>
